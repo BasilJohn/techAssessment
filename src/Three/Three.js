@@ -8,15 +8,21 @@ import {styles} from './styles';
 import {useSelector} from 'react-redux';
 import SlidingButton from '../customComponent/slidingButton';
 import {NavigationScreenProps} from '@react-navigation/native';
+import ButtonComponent from '../customComponent/buttonComponent';
+import {higherOrderComponent} from '../hoc/buttonHOCComponent';
 
-type ThreeProps = NavigationScreenProps & {
 
-};
+const VaritionOne=higherOrderComponent(ButtonComponent,styles.buttonTwoStyle);
+const VaritionTwo=higherOrderComponent(ButtonComponent,styles.buttonThreeStyle,styles.whiteText);
+
+type ThreeProps = NavigationScreenProps & {};
 const Three = (props: ThreeProps) => {
   const value = useSelector(state => state.main.inputValue);
   const slideEndAction = () => {
-    props.navigation.navigate('One')
+    props.navigation.navigate('One');
   };
+
+ 
   return (
     <View style={styles.container}>
       <View style={styles.welcomeViewContainer}>
@@ -38,21 +44,24 @@ const Three = (props: ThreeProps) => {
       </View>
       <View style={styles.variationButtonContainer}>
         <Text style={styles.variationHeaderText}>4 variations of a button</Text>
-        <View style={[styles.buttonStyle]}>
+        {/* <View style={[styles.buttonStyle]}>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonTextStyle}>Press me</Text>
           </TouchableOpacity>
-        </View>
-        <View style={[styles.buttonStyle, styles.buttonTwoStyle]}>
+        </View> */}
+        <ButtonComponent />
+        {/* <View style={[styles.buttonStyle, styles.buttonTwoStyle]}>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonTextStyle}>Press me</Text>
           </TouchableOpacity>
-        </View>
-        <View style={[styles.buttonStyle, styles.buttonThreeStyle]}>
+        </View> */}
+        <VaritionOne/>
+        {/* <View style={[styles.buttonStyle, styles.buttonThreeStyle]}>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.whiteText}>Press me</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
+        <VaritionTwo/>
         <View style={[styles.slidingButtonStyle]}>
           <SlidingButton endAction={slideEndAction}></SlidingButton>
         </View>

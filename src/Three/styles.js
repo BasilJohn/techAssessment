@@ -62,5 +62,5 @@ export const styles = StyleSheet.create({
   },
   inputValueStyle: {
     color: colorConstants.white,
-  },
+  }
 });
