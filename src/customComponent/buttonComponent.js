@@ -13,7 +13,7 @@ const buttonComponent = (props: buttonProps) => {
   return (
     <View style={[styles.buttonStyle,props.containerStyle]}>
       <TouchableOpacity style={styles.button}>
-        <Text style={[styles.buttonTextStyle,props.textStyle]}>Press me</Text>
+        <Text testID={"btnText"} style={[styles.buttonTextStyle,props.textStyle]}>Press me</Text>
       </TouchableOpacity>
     </View>
   );

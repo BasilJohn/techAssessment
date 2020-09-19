@@ -12,6 +12,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import One from './src/One/One';
 import Two from './src/Two/Two';
 import Three from './src/Three/Three';
+import UtilityValidator from './src/utlityValidator/utilityValidator';
+
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import mainReducer from './src//reducers/reducer';
@@ -21,7 +23,7 @@ const store = createStore(mainReducer);
 
 const App = () => {
   return (
-    <Provider isEmulator={"isEmulator"} store={store}>
+    <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="One" component={One} options={{title: 'One'}} />
@@ -30,6 +32,11 @@ const App = () => {
             name="Three"
             component={Three}
             options={{title: 'Three'}}
+          />
+          <Stack.Screen
+            name="utilityValidator"
+            component={UtilityValidator}
+            options={{title: 'Utility Validator'}}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -1,4 +1,3 @@
-
 /**
  * @format
  * @flow strict-local
@@ -10,11 +9,16 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './styles';
 import {NavigationScreenProps} from '@react-navigation/native';
 
-type TwoProps = NavigationScreenProps & {
+type TwoProps = NavigationScreenProps & {};
 
-};
 
-const Two = (props:TwoProps) => {
+const Two = (props: TwoProps) => {
+
+  const navigateToScreen = (screenName: string) => {
+    props.navigation.navigate(screenName);
+  };
+
+  
   const value = useSelector(state => state.main.inputValue);
   return (
     <View style={styles.container}>
@@ -23,14 +27,15 @@ const Two = (props:TwoProps) => {
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate('One')}
+          testID={"btnScreenOne"}
+          onPress={() => navigateToScreen('One')}
           style={styles.button}>
           <Text style={styles.textStyle}>Go to screen one</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate('Three')}
+          onPress={() => navigateToScreen('Three')}
           style={styles.button}>
           <Text style={styles.textStyle}>Go to screen three</Text>
         </TouchableOpacity>

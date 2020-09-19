@@ -17,6 +17,8 @@ node_modules/warning/.*
 
 [untyped]
 .*/node_modules/@react-native-community/cli/.*/.*
+.*/node_modules/.*
+
 
 [include]
 
@@ -66,7 +68,7 @@ nonstrict-import
 sketchy-null
 unclear-type
 unsafe-getters-setters
-untyped-type-import
+
 
 [version]
 ^0.122.0

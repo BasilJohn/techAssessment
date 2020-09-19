@@ -63,7 +63,7 @@ const Three = (props: ThreeProps) => {
         </View> */}
         <VaritionTwo/>
         <View style={[styles.slidingButtonStyle]}>
-          <SlidingButton endAction={slideEndAction}></SlidingButton>
+          <SlidingButton testID={'slider'} endAction={slideEndAction}></SlidingButton>
         </View>
       </View>
     </View>

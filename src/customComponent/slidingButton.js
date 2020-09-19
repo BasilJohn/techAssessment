@@ -82,7 +82,7 @@ class SlidingButton extends React.Component<Props, State> {
       <View style={styles.container}>
         <View style={[styles.iconContainer]}>
           <View style={[styles.textContainer]}>
-            <Text style={[styles.slideTxt]}>Slide me to continue</Text>
+            <Text testID={"txtSlideText"} style={[styles.slideTxt]}>Slide me to continue</Text>
           </View>
           <Animated.View
             {...this.bgPanHandler.panHandlers}
@@ -108,7 +108,7 @@ class SlidingButton extends React.Component<Props, State> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   iconContainer: {
     width: '90%',
