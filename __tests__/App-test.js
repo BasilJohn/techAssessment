@@ -89,6 +89,7 @@ test('Renders SlidingButton Component Correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
+
 describe('SlidingButton', () => {
   it('Displays press me', () => {
     const {getByTestId} = render(<SlidingButton />);
