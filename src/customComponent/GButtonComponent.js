@@ -1,4 +1,7 @@
-
+/**
+ * @format
+ * @flow strict-local
+ */
 import React from 'react';
 import {View, Text, TouchableOpacity, Dimensions,StyleSheet} from 'react-native';
 import * as colorConstants from '../constants/colorConstants';

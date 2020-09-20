@@ -10,11 +10,10 @@ import {GNavigationButtonComponent} from '../src/customComponent';
 import {render} from '@testing-library/react-native';
 
 
-test('Renders GNavigationButtonComponent Component Correctly', () => {
+test('Renders Button Component Correctly', () => {
   const tree = renderer.create(<GNavigationButtonComponent />).toJSON();
   expect(tree).toMatchSnapshot();
 });
-
 
 
 
