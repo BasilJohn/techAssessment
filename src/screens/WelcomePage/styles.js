@@ -3,7 +3,7 @@
  * @flow strict-local
  */
 import {StyleSheet, Dimensions} from 'react-native';
-import * as colorConstants from '../constants/colorConstants';
+import * as colorConstants from '../../constants/colorConstants';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,

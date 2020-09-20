@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders GButtonComponent Component Correctly 1`] = `
+<View
+  style={
+    Object {
+      "padding": 10,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "fontWeight": "bold",
+        "margin": 5,
+      }
+    }
+  />
+  <Text />
+  <Text
+    style={
+      Object {
+        "fontWeight": "bold",
+        "margin": 5,
+      }
+    }
+  />
+  <Text />
+  <Text
+    style={
+      Object {
+        "fontWeight": "bold",
+        "margin": 5,
+      }
+    }
+  />
+  <Text />
+</View>
+`;

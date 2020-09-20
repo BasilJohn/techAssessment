@@ -68,7 +68,7 @@ exports[`Renders Component Three Correctly 1`] = `
           }
         }
       >
-        Go to screen one
+        Go to Welcome
       </Text>
     </View>
   </View>
@@ -109,7 +109,7 @@ exports[`Renders Component Three Correctly 1`] = `
           }
         }
       >
-        Go to screen two
+        Go to Middle Station
       </Text>
     </View>
   </View>

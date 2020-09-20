@@ -1,57 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders Button Component Correctly 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "alignSelf": "center",
-        "borderRadius": 10,
-        "height": 93.38000000000001,
-        "marginBottom": 10,
-        "width": "90%",
-      },
-      undefined,
-    ]
-  }
->
-  <View
-    accessible={true}
-    focusable={false}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "height": "100%",
-        "justifyContent": "center",
-        "opacity": 1,
-        "width": "100%",
-      }
-    }
-  >
-    <Text
-      style={
-        Array [
-          Object {
-            "color": "#6E9ED0",
-            "textAlign": "center",
-          },
-          undefined,
-        ]
-      }
-      testID="btnText"
-    >
-      Press me
-    </Text>
-  </View>
-</View>
-`;
-
 exports[`Renders SlidingButton Component Correctly 1`] = `
 <View
   style={

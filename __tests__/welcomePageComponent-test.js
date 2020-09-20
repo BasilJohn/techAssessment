@@ -5,10 +5,10 @@
 import 'react-native';
 import React from 'react';
 import {shallow} from 'enzyme';
-import {One} from '../src/One/One';
-import mainReducer from '../src/reducers/reducer';
+import {WelcomPage} from '../src/screens/WelcomePage/welcomePageComponent';
+import mainReducer from '../src/store/reducers/reducer';
 import configureMockStore from 'redux-mock-store';
-import {setInputValue} from '../src/actions/mainActions';
+import {setInputValue} from '../src/store/actions/mainActions';
 import {NativeModules} from 'react-native';
 import renderer from 'react-test-renderer';
 import {Provider} from 'react-redux';
@@ -26,7 +26,7 @@ NativeModules.EmulatorInfo = {
 
 const comp = renderer.create(
   <Provider store={store}>
-    <One />
+    <WelcomPage />
   </Provider>,
 );
 test('Renders Component One Correctly', () => {
@@ -59,7 +59,7 @@ describe('One Functions', () => {
     setInputValue: jest.fn(),
   };
   const component = shallow(
-    <One
+    <WelcomPage
       store={store}
       setInputValue={props.setInputValue}
       navigation={props.navigation}
@@ -68,20 +68,6 @@ describe('One Functions', () => {
   let instance;
   beforeEach(() => {
     instance = component.instance();
-  });
-
-  it('Call navigate Two', () => {
-    instance.navigateToScreen('Two');
-    expect(props.navigation.navigate).toHaveBeenCalled();
-    expect(props.navigation.navigate).toHaveBeenCalledWith('Two');
-    expect(props.navigation.navigate).toHaveBeenCalledTimes(1);
-  });
-
-  it('Call navigate Three', () => {
-    instance.navigateToScreen('Three');
-    expect(props.navigation.navigate).toHaveBeenCalled();
-    expect(props.navigation.navigate).toHaveBeenCalledTimes(2);
-    expect(props.navigation.navigate).toHaveBeenCalledWith('Three');
   });
 
   it('Change input Value', () => {

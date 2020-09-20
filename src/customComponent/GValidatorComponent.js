@@ -17,7 +17,7 @@ import {NavigationScreenProps} from '@react-navigation/native';
 type validatorProps = NavigationScreenProps & {
   objectOne?: Object,
   objectTwo?: Object,
-  operation?:Function
+  operation?:Object
 };
 
 const validatorComponent = (props: validatorProps) => {

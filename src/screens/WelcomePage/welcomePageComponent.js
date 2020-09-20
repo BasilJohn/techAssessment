@@ -6,30 +6,26 @@ import * as React from 'react';
 import {View, Text, TouchableOpacity, TextInput} from 'react-native';
 import {styles} from './styles';
 import {connect} from 'react-redux';
-import {setInputValue, setEmulatorInformation} from '../actions/mainActions';
-import {bindActionCreators} from 'redux';
+import {mainActions} from '../../store/actions';
 import {NativeModules} from 'react-native';
 import {NavigationScreenProps} from '@react-navigation/native';
-
-type OneProps = NavigationScreenProps & {
+import {GNavigationButtonComponent} from '../../customComponent'
+type welcomPageProps = NavigationScreenProps & {
   inputValue: string,
   isEmulator: string,
   setEmulatorInformation: (isEmulator: string) => string,
   setInputValue: (inputValue: String) => string,
 };
 
-export class One extends React.Component<OneProps> {
+export class WelcomPage extends React.Component<welcomPageProps> {
   componentDidMount() {
     NativeModules.EmulatorInfo.isEmulator((err, value) =>
       this.props.setEmulatorInformation(value),
     );
   }
 
-  navigateToScreen = (screenName: string) => {
-    this.props.navigation.navigate(screenName);
-  };
   changeInputValue = (text: string) => {
-    this.props.setInputValue(text) 
+    this.props.setInputValue(text);
   };
 
   render(): React.Node {
@@ -43,27 +39,9 @@ export class One extends React.Component<OneProps> {
             App is running in Emulator:{this.props.isEmulator}
           </Text>
         </View>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            onPress={() => this.navigateToScreen('Two')}
-            style={styles.button}>
-            <Text style={styles.textStyle}>Go to screen two</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            onPress={() => this.navigateToScreen('Three')}
-            style={styles.button}>
-            <Text style={styles.textStyle}>Go to screen three</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            onPress={() => this.navigateToScreen('utilityValidator')}
-            style={styles.button}>
-            <Text style={styles.textStyle}>Go to Utility Validator</Text>
-          </TouchableOpacity>
-        </View>
+        <GNavigationButtonComponent navProps={this.props} title={"Go to MiddleStation"} screenName={"middleStation"}/>
+        <GNavigationButtonComponent navProps={this.props} title={"Go to Showcase"} screenName={"showcase"}/>
+        <GNavigationButtonComponent navProps={this.props} title={"Go to Utility Validator"} screenName={"utilityValidator"}/>
         <View style={styles.inputContainer}>
           <TextInput
             testID={'txtInputValue'}
@@ -82,13 +60,8 @@ const mapStateToProps = state => {
   return {inputValue, isEmulator};
 };
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      setInputValue,
-      setEmulatorInformation,
-    },
-    dispatch,
-  );
+const mapDispatchToProps = {
+  ...mainActions,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(One);
+export default connect(mapStateToProps, mapDispatchToProps)(WelcomPage);

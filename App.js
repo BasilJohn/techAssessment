@@ -9,14 +9,14 @@ import React,{useEffect} from 'react';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import One from './src/One/One';
-import Two from './src/Two/Two';
-import Three from './src/Three/Three';
-import UtilityValidator from './src/utlityValidator/utilityValidator';
+import WelcomePageScreen from './src/screens/WelcomePage/welcomePageComponent';
+import MiddleStationScreen from './src/screens/MiddleStation/middleStationComponent';
+import ShowCaseScreen from './src/screens/ShowCase/showCaseComponent';
+import UtilityValidatorScreen from './src/screens/UtlityValidator/utilityValidatorComponent';
 
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import mainReducer from './src//reducers/reducer';
+import mainReducer from './src/store/reducers/reducer';
 
 const Stack = createStackNavigator();
 const store = createStore(mainReducer);
@@ -26,16 +26,16 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="One" component={One} options={{title: 'One'}} />
-          <Stack.Screen name="Two" component={Two} options={{title: 'Two'}} />
+          <Stack.Screen name="welcome" component={WelcomePageScreen} options={{title: 'Welcome'}} />
+          <Stack.Screen name="middleStation" component={MiddleStationScreen} options={{title: 'Middle Station'}} />
           <Stack.Screen
-            name="Three"
-            component={Three}
-            options={{title: 'Three'}}
+            name="showcase"
+            component={ShowCaseScreen}
+            options={{title: 'Showcase'}}
           />
           <Stack.Screen
             name="utilityValidator"
-            component={UtilityValidator}
+            component={UtilityValidatorScreen}
             options={{title: 'Utility Validator'}}
           />
         </Stack.Navigator>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders Component Two Correctly 1`] = `
+exports[`Renders Component One Correctly 1`] = `
 <View
   style={
     Object {
@@ -21,7 +21,27 @@ exports[`Renders Component Two Correctly 1`] = `
   >
     <Text>
       Input Data :
-      
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "height": 66.7,
+        "justifyContent": "center",
+        "paddingRight": 20,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    >
+      App is running in Emulator:
     </Text>
   </View>
   <View
@@ -53,7 +73,6 @@ exports[`Renders Component Two Correctly 1`] = `
           "width": "100%",
         }
       }
-      testID="btnScreenOne"
     >
       <Text
         style={
@@ -62,7 +81,7 @@ exports[`Renders Component Two Correctly 1`] = `
           }
         }
       >
-        Go to screen one
+        Go to MiddleStation
       </Text>
     </View>
   </View>
@@ -103,9 +122,76 @@ exports[`Renders Component Two Correctly 1`] = `
           }
         }
       >
-        Go to screen three
+        Go to Showcase
       </Text>
     </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "backgroundColor": "grey",
+        "height": 133.4,
+        "marginBottom": 10,
+        "width": "90%",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "height": "100%",
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Go to Utility Validator
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "height": 133.4,
+        "marginBottom": 10,
+        "width": "90%",
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Type your name here"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderWidth": 1,
+          "height": "100%",
+          "width": "100%",
+        }
+      }
+      testID="txtInputValue"
+      underlineColorAndroid="transparent"
+    />
   </View>
 </View>
 `;
