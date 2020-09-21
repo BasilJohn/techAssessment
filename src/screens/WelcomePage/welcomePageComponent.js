@@ -21,26 +21,29 @@ type welcomPageProps = NavigationScreenProps & {
 
 export class WelcomPage extends React.Component<welcomPageProps> {
   componentDidMount() {
-    NativeModules.EmulatorInfo.isEmulator((err, value) => this.props.setEmulatorInformation(value));
+    const { setEmulatorInformation } = this.props;
+    NativeModules.EmulatorInfo.isEmulator((err, value) => setEmulatorInformation(value));
   }
 
   changeInputValue = (text: string) => {
-    this.props.setInputValue(text);
+    const { setInputValue } = this.props;
+    setInputValue(text);
   };
 
   render(): React.Node {
+    const { inputValue, isEmulator } = this.props;
     return (
       <View style={styles.container}>
         <View style={styles.welcomeViewContainer}>
           <Text>
             Input Data :
-            {this.props.inputValue}
+            {inputValue}
           </Text>
         </View>
         <View style={styles.welcomeViewContainer}>
           <Text style={styles.noiceText}>
             App is running in Emulator:
-            {this.props.isEmulator}
+            {isEmulator}
           </Text>
         </View>
         <GNavigationButtonComponent navProps={this.props} title="Go to MiddleStation" screenName="middleStation" />
@@ -50,7 +53,7 @@ export class WelcomPage extends React.Component<welcomPageProps> {
           <TextInput
             testID="txtInputValue"
             onChangeText={(text) => this.changeInputValue(text)}
-            value={this.props.inputValue}
+            value={inputValue}
             placeholder="Type your name here"
             style={styles.input}
           />

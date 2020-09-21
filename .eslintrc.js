@@ -8,7 +8,6 @@ module.exports = {
     'react/prop-types': 'off',
     'comma-dangle': 'off',
     'import/prefer-default-export': 'off',
-    'react/destructuring-assignment': 'off',
     'no-underscore-dangle': 'off',
     'react/jsx-props-no-spreading': 'off',
     'arrow-body-style': 'off'

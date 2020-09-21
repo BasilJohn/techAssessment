@@ -47,7 +47,8 @@ class SlidingButton extends React.Component<Props, State> {
           duration: 0,
           useNativeDriver: false,
         }).start();
-        this.props.endAction();
+        const { endAction } = this.props;
+        endAction();
       } else {
         Animated.timing(this.animatedWidth, {
           toValue: 20 + runningPC,
@@ -81,6 +82,7 @@ class SlidingButton extends React.Component<Props, State> {
   }
 
   render(): React.Node {
+    const { bgColor } = this.state;
     return (
       <View style={styles.container}>
         <View style={[styles.iconContainer]}>
@@ -95,9 +97,9 @@ class SlidingButton extends React.Component<Props, State> {
               styles.button,
               {
                 width:
-                  this.state.bgColor === 0
-                    ? '20%'
-                    : `${this.animatedWidth._value}%`,
+                bgColor === 0
+                  ? '20%'
+                  : `${this.animatedWidth._value}%`,
               },
             ]}
           >
