@@ -97,7 +97,7 @@ class SlidingButton extends React.Component<Props, State> {
                 width:
                   this.state.bgColor === 0
                     ? '20%'
-                    : this.animatedWidth._value + '%',
+                    : `${this.animatedWidth._value}%`,
               },
             ]}
           >

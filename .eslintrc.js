@@ -11,8 +11,7 @@ module.exports = {
     'react/destructuring-assignment': 'off',
     'no-underscore-dangle': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'arrow-body-style': 'off',
-    'prefer-template': 'off'
+    'arrow-body-style': 'off'
   },
   globals: {
     fetch: false
