@@ -52,7 +52,7 @@
     "preset": "react-native",
     "setupFiles": [
       "./node_modules/react-native-gesture-handler/jestSetup.js",
-      "./src/setupTests.js"
+      "./src/setup/enzyme/setupTests.js"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|react-navigation|@react-navigation/.*))"

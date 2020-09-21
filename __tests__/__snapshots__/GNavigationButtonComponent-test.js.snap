@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders Button Component Correctly 1`] = `
+exports[`Renders GNavigationButtonComponent Component Correctly 1`] = `
 <View
   style={
     Object {
