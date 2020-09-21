@@ -4,6 +4,7 @@
  */
 
 import { combineReducers } from 'redux';
+import * as ActionTypes from '../../constants/actionConstants';
 
 const INITIAL_STATE = {
   inputValue: '',
@@ -12,12 +13,12 @@ const INITIAL_STATE = {
 
 const mainReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'SET_INPUT_VALUE':
+    case ActionTypes.SET_INPUT_VALUE:
       return {
         ...state,
         inputValue: action.payload,
       };
-    case 'SET_EMULATOR_INFO':
+    case ActionTypes.SET_EMULATOR_INFO:
       return {
         ...state,
         isEmulator: action.payload,
