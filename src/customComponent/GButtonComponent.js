@@ -14,15 +14,13 @@ type buttonProps = NavigationScreenProps &{
     textStyle?:Object
   };
 
-const buttonComponent = (props: buttonProps) => {
-  return (
-    <View style={[styles.buttonStyle, props.containerStyle]}>
-      <TouchableOpacity style={styles.button}>
-        <Text testID="btnText" style={[styles.buttonTextStyle, props.textStyle]}>Press me</Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
+const buttonComponent = (props: buttonProps) => (
+  <View style={[styles.buttonStyle, props.containerStyle]}>
+    <TouchableOpacity style={styles.button}>
+      <Text testID="btnText" style={[styles.buttonTextStyle, props.textStyle]}>Press me</Text>
+    </TouchableOpacity>
+  </View>
+);
 
 const styles = StyleSheet.create({
   buttonStyle: {

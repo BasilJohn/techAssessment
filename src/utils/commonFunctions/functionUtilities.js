@@ -13,8 +13,8 @@ const combineArray = (paramOne: Array<string>, paramTwo: Array<string>) => {
   return combinedArray;
 };
 
-const combineAny = (valueOne: number | string, valueTwo: number | string) => {
-  return valueOne + valueTwo;
-};
+const combineAny = (valueOne: number | string, valueTwo: number | string) => (
+  valueOne + valueTwo
+);
 
 export { combineObject, combineArray, combineAny };

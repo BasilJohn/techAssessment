@@ -19,18 +19,16 @@ type validatorProps = NavigationScreenProps & {
   operation?: Function,
 };
 
-const navigationButtonComponent = (props: validatorProps) => {
-  return (
-    <View style={styles.buttonContainer}>
-      <TouchableOpacity
-        onPress={() => props.navProps.navigation.navigate(props.screenName)}
-        style={styles.button}
-      >
-        <Text style={styles.textStyle}>{props.title}</Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
+const navigationButtonComponent = (props: validatorProps) => (
+  <View style={styles.buttonContainer}>
+    <TouchableOpacity
+      onPress={() => props.navProps.navigation.navigate(props.screenName)}
+      style={styles.button}
+    >
+      <Text style={styles.textStyle}>{props.title}</Text>
+    </TouchableOpacity>
+  </View>
+);
 
 const styles = StyleSheet.create({
   buttonContainer: {

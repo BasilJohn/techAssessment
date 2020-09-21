@@ -9,8 +9,7 @@ module.exports = {
     'comma-dangle': 'off',
     'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    'arrow-body-style': 'off'
+    'react/jsx-props-no-spreading': 'off'
   },
   globals: {
     fetch: false

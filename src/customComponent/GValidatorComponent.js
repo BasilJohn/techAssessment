@@ -16,20 +16,18 @@ type validatorProps = NavigationScreenProps & {
   operation?:Object
 };
 
-const validatorComponent = (props: validatorProps) => {
-  return (
-    <View style={styles.validatorContainer}>
-      <Text style={styles.header}>{props.headerOne}</Text>
-      <Text>{JSON.stringify(props.objectOne)}</Text>
-      <Text style={styles.header}>{props.headerTwo}</Text>
-      <Text>{JSON.stringify(props.objectTwo)}</Text>
-      <Text style={styles.header}>{props.final}</Text>
-      <Text>
-        {JSON.stringify(props.operation(props.objectOne, props.objectTwo))}
-      </Text>
-    </View>
-  );
-};
+const validatorComponent = (props: validatorProps) => (
+  <View style={styles.validatorContainer}>
+    <Text style={styles.header}>{props.headerOne}</Text>
+    <Text>{JSON.stringify(props.objectOne)}</Text>
+    <Text style={styles.header}>{props.headerTwo}</Text>
+    <Text>{JSON.stringify(props.objectTwo)}</Text>
+    <Text style={styles.header}>{props.final}</Text>
+    <Text>
+      {JSON.stringify(props.operation(props.objectOne, props.objectTwo))}
+    </Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
   validatorContainer: {
