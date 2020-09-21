@@ -3,7 +3,7 @@
  * @flow strict-local
  */
 const combineObject = (objectOne: {name: string, place: string},
-  objectTwo: {activity: string, level: string}) => {
+  objectTwo: {name: string, place: string}) => {
   const combinedObject = { ...objectOne, ...objectTwo };
   return combinedObject;
 };

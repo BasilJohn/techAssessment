@@ -19,7 +19,7 @@ type Props = {
   endAction: () => void,
 };
 type State = {
-  bgColor: string
+  bgColor: number
 };
 class SlidingButton extends React.Component<Props, State> {
   deviceWidth = Dimensions.get('window').width;
@@ -55,7 +55,7 @@ class SlidingButton extends React.Component<Props, State> {
           useNativeDriver: false,
         }).start();
       }
-      const bgColorRunning = this.animatedWidth._value === 0 ? '#262A32' : 'rgba(124,243,249, 0.8)';
+      const bgColorRunning = this.animatedWidth._value === 0 ? 0 : runningPC;
       this.setState({ bgColor: bgColorRunning });
     },
     onPanResponderRelease: (event, gesture) => {
@@ -67,13 +67,13 @@ class SlidingButton extends React.Component<Props, State> {
           useNativeDriver: false,
         }).start();
       }
-      const bgColorRunning = this.animatedWidth._value === 0 ? '#262A32' : 'rgba(124,243,249, 0.8)';
+      const bgColorRunning = this.animatedWidth._value === 0 ? 0 : runningPC;
       this.setState({ bgColor: bgColorRunning });
       this.animatedWidth.flattenOffset();
     },
   });
 
-  constructor(props) {
+  constructor(props:Object) {
     super(props);
     this.state = {
       bgColor: 0
