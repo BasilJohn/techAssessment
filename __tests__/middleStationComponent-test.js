@@ -4,9 +4,9 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import MiddleStationScreen from '../src/screens/MiddleStation/middleStationComponent';
 import configureMockStore from 'redux-mock-store';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
+import MiddleStationScreen from '../src/screens/MiddleStation/middleStationComponent';
 
 const mockStore = configureMockStore([]);
 const store = mockStore({
@@ -25,4 +25,3 @@ test('Renders Component Two Correctly', () => {
   const tree = comp.toJSON();
   expect(tree).toMatchSnapshot();
 });
-

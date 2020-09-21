@@ -10,7 +10,7 @@ import {
 } from '../src/utils/commonFunctions/functionUtilities';
 
 test('Test Combined Object', () => {
-  var value = combineObject(
+  const value = combineObject(
     {
       name: 'Basil',
       place: 'Chennai',
@@ -29,25 +29,21 @@ test('Test Combined Object', () => {
 });
 
 test('Test Combined Array', () => {
-  var value = combineArray(['Banana', 'WaterMelon'], ['Brinjal', 'Carrot']);
+  const value = combineArray(['Banana', 'WaterMelon'], ['Brinjal', 'Carrot']);
   expect(value).toStrictEqual(['Banana', 'WaterMelon', 'Brinjal', 'Carrot']);
 });
 
 test('Add two numbers', () => {
-  var value = combineAny(1, 1);
+  const value = combineAny(1, 1);
   expect(value).toBe(2);
 });
 
 test('Add two string', () => {
-  var value = combineAny('Basil', 'John');
+  const value = combineAny('Basil', 'John');
   expect(value).toEqual('BasilJohn');
 });
 
 test('Add number and string', () => {
-  var value = combineAny(10, 'Jumping Jacks');
+  const value = combineAny(10, 'Jumping Jacks');
   expect(value).toEqual('10Jumping Jacks');
 });
-
-
-
-

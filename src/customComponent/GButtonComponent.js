@@ -3,9 +3,11 @@
  * @flow strict-local
  */
 import React from 'react';
-import {View, Text, TouchableOpacity, Dimensions,StyleSheet} from 'react-native';
+import { NavigationScreenProps } from '@react-navigation/native';
+import {
+  View, Text, TouchableOpacity, Dimensions, StyleSheet
+} from 'react-native';
 import * as colorConstants from '../constants/colorConstants';
-import {NavigationScreenProps} from '@react-navigation/native';
 
 type buttonProps = NavigationScreenProps &{
     containerStyle?:Object,
@@ -14,9 +16,9 @@ type buttonProps = NavigationScreenProps &{
 
 const buttonComponent = (props: buttonProps) => {
   return (
-    <View style={[styles.buttonStyle,props.containerStyle]}>
+    <View style={[styles.buttonStyle, props.containerStyle]}>
       <TouchableOpacity style={styles.button}>
-        <Text testID={"btnText"} style={[styles.buttonTextStyle,props.textStyle]}>Press me</Text>
+        <Text testID="btnText" style={[styles.buttonTextStyle, props.textStyle]}>Press me</Text>
       </TouchableOpacity>
     </View>
   );

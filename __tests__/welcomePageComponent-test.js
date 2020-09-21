@@ -1,17 +1,15 @@
 /**
  * @format
  */
-
-import 'react-native';
 import React from 'react';
-import {shallow} from 'enzyme';
-import {WelcomPage} from '../src/screens/WelcomePage/welcomePageComponent';
-import mainReducer from '../src/store/reducers/reducer';
-import configureMockStore from 'redux-mock-store';
-import {setInputValue} from '../src/store/actions/mainActions';
-import {NativeModules} from 'react-native';
+import { shallow } from 'enzyme';
+import { NativeModules } from 'react-native';
 import renderer from 'react-test-renderer';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store';
+import { WelcomPage } from '../src/screens/WelcomePage/welcomePageComponent';
+import mainReducer from '../src/store/reducers/reducer';
+import { setInputValue } from '../src/store/actions/mainActions';
 
 const mockStore = configureMockStore([]);
 const store = mockStore({
@@ -36,17 +34,18 @@ test('Renders Component One Correctly', () => {
 
 describe('One Actions & Reducers', () => {
   it('Simulate Action', () => {
-    let data = 'Basil';
+    const data = 'Basil';
 
-    //Test Action Creators
+    // Test Action Creators
     store.dispatch(setInputValue(data));
     expect(setInputValue(data)).toEqual({
       payload: data,
       type: 'SET_INPUT_VALUE',
     });
 
-    //Test Reducers
-    const afterState = mainReducer((main = {}), setInputValue(data));
+    // Test Reducers
+    const main = {};
+    const afterState = mainReducer((main), setInputValue(data));
     expect(afterState.main.inputValue).toEqual(data);
   });
 });
@@ -76,5 +75,4 @@ describe('One Functions', () => {
     expect(props.setInputValue).toHaveBeenCalledTimes(1);
     expect(props.setInputValue).toHaveBeenCalledWith('New Text');
   });
-
 });

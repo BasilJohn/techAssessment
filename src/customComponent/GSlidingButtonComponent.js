@@ -10,28 +10,26 @@ import {
   PanResponder,
   Dimensions,
   Text,
-  Easing
 } from 'react-native';
-import * as colorConstants from '../constants/colorConstants';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import * as colorConstants from '../constants/colorConstants';
 
 type Props = {
   endAction: () => void,
 };
 type State = {
-  bgColor: string,
-  finalWidth: number,
+  bgColor: string
 };
-
 class SlidingButton extends React.Component<Props, State> {
-  state = {
-    bgColor: colorConstants.white,
-    finalWidth: 0,
-  };
   deviceWidth = Dimensions.get('window').width;
+
   calculatedWidth = 0;
+
   animatedWidth = new Animated.Value(0);
+
   position = new Animated.ValueXY();
+
   bgPanHandler = PanResponder.create({
     onMoveShouldSetPanResponder: () => true,
     onPanResponderGrant: () => true,
@@ -57,9 +55,8 @@ class SlidingButton extends React.Component<Props, State> {
           useNativeDriver: false,
         }).start();
       }
-      let bgColorRunning =
-        this.animatedWidth._value == 0 ? '#262A32' : 'rgba(124,243,249, 0.8)';
-      this.setState({bgColor: bgColorRunning});
+      const bgColorRunning = this.animatedWidth._value === 0 ? '#262A32' : 'rgba(124,243,249, 0.8)';
+      this.setState({ bgColor: bgColorRunning });
     },
     onPanResponderRelease: (event, gesture) => {
       const runningPC = (gesture.dx / this.deviceWidth) * 100;
@@ -70,19 +67,27 @@ class SlidingButton extends React.Component<Props, State> {
           useNativeDriver: false,
         }).start();
       }
-      let bgColorRunning =
-      this.animatedWidth._value == 0 ? '#262A32' : 'rgba(124,243,249, 0.8)';
-       this.setState({bgColor: bgColorRunning});
+      const bgColorRunning = this.animatedWidth._value === 0 ? '#262A32' : 'rgba(124,243,249, 0.8)';
+      this.setState({ bgColor: bgColorRunning });
       this.animatedWidth.flattenOffset();
     },
   });
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      bgColor: 0
+    };
+  }
 
   render(): React.Node {
     return (
       <View style={styles.container}>
         <View style={[styles.iconContainer]}>
           <View style={[styles.textContainer]}>
-            <Text testID={"txtSlideText"} style={[styles.slideTxt]}>Slide me to continue</Text>
+            <Text testID="txtSlideText" style={[styles.slideTxt]}>
+              Slide me to continue
+            </Text>
           </View>
           <Animated.View
             {...this.bgPanHandler.panHandlers}
@@ -90,11 +95,12 @@ class SlidingButton extends React.Component<Props, State> {
               styles.button,
               {
                 width:
-                  this.animatedWidth._value == 0
+                  this.state.bgColor === 0
                     ? '20%'
                     : this.animatedWidth._value + '%',
               },
-            ]}>
+            ]}
+          >
             <View style={styles.icon}>
               <Icon name="diamond" size={20} style={styles.iconText} />
             </View>
@@ -108,7 +114,7 @@ class SlidingButton extends React.Component<Props, State> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   iconContainer: {
     width: '90%',

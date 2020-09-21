@@ -12,7 +12,5 @@ export const blueButtonBG = '#34434A';
 export const darkButtonBG = '#6EB1F7';
 export const white = '#FFFFFF';
 export const dragColor = 'rgba(110, 177, 247, 0.8)';
-export const dragButtonBGColor = "#1B1A24";
-export const dragButtonBorderColor = "#3E464E";
-
-
+export const dragButtonBGColor = '#1B1A24';
+export const dragButtonBorderColor = '#3E464E';

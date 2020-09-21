@@ -10,8 +10,9 @@ import {
   Dimensions,
   StyleSheet,
 } from 'react-native';
+import { NavigationScreenProps } from '@react-navigation/native';
 import * as colorConstants from '../constants/colorConstants';
-import {NavigationScreenProps} from '@react-navigation/native';
+
 type validatorProps = NavigationScreenProps & {
   objectOne?: Object,
   objectTwo?: Object,
@@ -23,7 +24,8 @@ const navigationButtonComponent = (props: validatorProps) => {
     <View style={styles.buttonContainer}>
       <TouchableOpacity
         onPress={() => props.navProps.navigation.navigate(props.screenName)}
-        style={styles.button}>
+        style={styles.button}
+      >
         <Text style={styles.textStyle}>{props.title}</Text>
       </TouchableOpacity>
     </View>

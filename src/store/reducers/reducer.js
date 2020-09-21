@@ -3,7 +3,7 @@
  * @flow strict-local
  */
 
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
 const INITIAL_STATE = {
   inputValue: '',

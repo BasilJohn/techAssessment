@@ -1,4 +1,3 @@
-
 /**
  * @format
  * @flow strict-local
@@ -7,12 +6,9 @@ import React from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
-  Dimensions,
   StyleSheet,
 } from 'react-native';
-import * as colorConstants from '../constants/colorConstants';
-import {NavigationScreenProps} from '@react-navigation/native';
+import { NavigationScreenProps } from '@react-navigation/native';
 
 type validatorProps = NavigationScreenProps & {
   objectOne?: Object,

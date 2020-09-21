@@ -1,2 +1,3 @@
-import * as mainActions from "./mainActions";
-export { mainActions};
+import * as mainActions from './mainActions';
+
+export { mainActions };
