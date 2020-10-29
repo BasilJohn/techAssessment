@@ -83,6 +83,8 @@ class SlidingButton extends React.Component<Props, State> {
 
   render(): React.Node {
     const { bgColor } = this.state;
+    const { panHandlers } = this.bgPanHandler;
+
     return (
       <View style={styles.container}>
         <View style={[styles.iconContainer]}>
@@ -92,7 +94,7 @@ class SlidingButton extends React.Component<Props, State> {
             </Text>
           </View>
           <Animated.View
-            {...this.bgPanHandler.panHandlers}
+            {...panHandlers}
             style={[
               styles.button,
               {

@@ -46,3 +46,4 @@ export const styles = StyleSheet.create({
     color: colorConstants.red,
   },
 });
+export default styles;

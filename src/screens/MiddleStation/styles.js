@@ -28,3 +28,4 @@ export const styles = StyleSheet.create({
     paddingRight: 20,
   },
 });
+export default styles;

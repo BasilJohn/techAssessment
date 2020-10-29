@@ -14,4 +14,4 @@ const setEmulatorInformation = (isEmulator: string) => ({
   payload: isEmulator,
 });
 
-export { setInputValue, setEmulatorInformation };
+export { setEmulatorInformation, setInputValue };

@@ -11,3 +11,4 @@ export const higherOrderComponent = (WrappedComponent:any,
   );
   return buttonHOC;
 };
+export default higherOrderComponent;
